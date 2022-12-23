@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Identification</title>
+    <link rel="stylesheet" href="./style.css" > 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+	    <h1>Tennis Game</h1> 
+    </header>
+    
+    <div class="message">
+    	<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+		<div class="alert alert-error" role="alert" th:text="${error}" th:if="${error}"></div>
+    </div>
+    
+    <div class="nav-bar1">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+
+	<div class="nav-bar2">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+	
+	<footer>
+		<p> Copyright &copy; CY-Tech -2022-2023 - All Right Reserved </p> 
+	</footer>
+	
+    <div class="main">
+        <form action="/identification" method="POST">
+            <label>Identifiant: <input name="login" type="text" placeholder="Entrer votre identifiant:"></label>	
+            <label>Mot de passe: <input name="motDePasse" type="password" placeholder="Entrer votre mot de passe :"></label>	
+            <button type="submit">Se connecter</button>
+        </form>
+	</div>
+	
+</body>
+
+</html>

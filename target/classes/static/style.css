@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+	padding:0;
+}
+
+body {
+	display: grid;
+	grid-template-areas:
+		"message"
+		"header"
+		"nav-bar1"
+		"main"
+		"footer";
+	grid-template-rows: min-content min-content min-content auto min-content;
+	height: 100vh;
+	width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background:rgb(187, 243, 175);
+    background-image: url('https://img.freepik.com/photos-gratuite/raquette-tennis-nouvelle-balle-tennis-court-tennis-fraichement-peint_146671-18857.jpg');	
+	background-size: cover;
+}
+
+@media (min-width: 1000px) {
+	button {
+		margin: 0.2rem;
+	}
+  body {
+	grid-template-columns: min-content auto;
+	grid-template-rows: min-content min-content auto min-content;
+	grid-template-areas:
+		"message header"
+		"nav-bar1 nav-bar1"
+		"nav-bar2 main"
+		"footer footer";
+  }
+  .nav-bar2 {
+  	display: flex !important;
+  	flex-direction: column;
+  }
+}
+
+header {
+	width: 100%;
+	padding: 2em;
+	grid-area: header;
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+
+.message {
+	grid-area: message;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.alert {
+	background-color: #fffa;
+	padding: 0.2em;
+	font-size: 2rem;
+}
+
+.alert-error {
+	color: #e22;
+}
+
+.alert-success {
+	color: #2a2;
+}
+
+.nav-bar1 {
+	width: 100%;
+	grid-area: nav-bar1;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 5px;
+    margin-top: 1rem; 
+    margin-bottom: 1rem; 
+    padding: 0px;
+}
+
+.nav-bar1 > * {
+	flex: auto;
+}
+
+.nav-bar1 button {
+	width: max-content;
+}
+
+.nav-bar2 {
+	width: 100%;
+	grid-area: nav-bar2;
+    font-size: 20px;
+    display: none;
+}
+
+.nav-bar2 > * {
+	flex: auto;
+	display: block;
+}
+
+.nav-bar2 button {
+	width: -moz-available;
+	width: -webkit-fill-available;
+}
+
+.main {
+	width: 100%;
+	grid-area: main;
+	background: #bcab;
+	padding: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+}
+
+.main > * {
+	margin: auto;
+}
+
+footer {
+	width: 100%;
+	grid-area: footer;
+	background-color: #fffd;
+}
+
+header > h1 {
+	font-size: 3em;	
+}
+
+h1{
+    color: white;
+    text-shadow: 3px 3px 2px black;
+}
+
+.h1{
+    border-color: white;
+}
+
+form {
+	display: grid;
+	width: 100%;
+}
+
+form > * {
+	margin: 5px;
+}
+
+.two-columns {
+	grid-template-columns: auto auto;
+}
+
+table {
+    width: 80%;
+    border: 3px solid #865b4d;
+    padding: 3px;
+    background-color:rgb(245, 215, 215);
+    table-layout: auto;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 1.5em;
+}
+
+th {
+    text-align: center;
+    border: 3px solid #865b4d;   
+    padding: 3px;
+}
+
+td {
+    text-align: center;
+    border: 2px solid #865b4d;   
+    padding: 2px;
+}
+
+tr {
+    border: 3px solid #865b4d;  
+    padding: 3px;
+}
+
+.main a {
+    min-width: 308px;
+    margin: 0rem;               
+    padding: 6rem 4;
+    text-decoration: none;    
+}
+
+.main button {
+	margin: auto;
+}
+
+.main p {
+	text-align: justify;
+	text-indent: 4em;
+	background-color: #d649;
+	max-width: 50em;
+	font-size: 1.2em;
+	box-shadow: 0.2em 0.2em 1em 0.5em #fca;
+	border-radius: 0.5em;
+	padding: 0.5em;
+}
+
+button {
+    padding: 10px;
+    margin: 1rem;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    border-color: white;
+    background: rgb(2, 7, 32);
+    color: rgb(241, 245, 238);
+	width: max-content;
+}
+
+footer p{
+text-align : center ;
+width : 100% ;
+display :inline-block ;
+font-size : 13px ;  
+}

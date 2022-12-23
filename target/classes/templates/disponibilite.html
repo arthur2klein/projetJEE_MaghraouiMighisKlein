@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Identification</title>
+    <link rel="stylesheet" href="./style.css" > 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+	    <h1>Tennis Game</h1> 
+    </header>
+    
+    <div class="message">
+    	<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+		<div class="alert alert-error" role="alert" th:text="${error}" th:if="${error}"></div>
+    </div>
+    
+    <div class="nav-bar1">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+
+	<div class="nav-bar2">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+	
+	<footer>
+		<p> Copyright &copy; CY-Tech -2022-2023 - All Right Reserved </p> 
+	</footer>
+    
+    <div class="main">
+    	<h1>Choisissez vos disponibilités </h1>
+   		<form method="POST" action="/disponibilite">
+    	<table>
+			<tr>
+				<th>&nbsp;</th>
+		  		<th>17h-18h </th>
+		  		<th>18h-19h </th>
+		  		<th>19h-20h </th>
+		  		<th>20h-21h </th>
+    		</tr>
+    		<tr>
+		  		<th>Lundi</th>
+		 		<td><input type="checkbox" th:checked="${lundi17}" name="lundi17"/></td>
+		 		<td><input type="checkbox" th:checked="${lundi18}" name="lundi18"/></td>
+		  		<td><input type="checkbox" th:checked="${lundi19}" name="lundi19"/></td> 
+		        <td><input type="checkbox" th:checked="${lundi20}" name="lundi20"/></td> 
+			</tr>
+			<tr>
+		  		<th>Mardi</th>
+		 		<td><input type="checkbox" name="mardi17"/></td>
+		 		<td><input type="checkbox" name="mardi18"/></td>
+		  		<td><input type="checkbox" name="mardi19"/></td> 
+		        <td><input type="checkbox" name="mardi20"/></td> 
+			</tr>
+			<tr>
+		  		<th>Mercredi</th>
+		 		<td><input type="checkbox" name="mercredi17"/></td>
+		 		<td><input type="checkbox" name="mercredi18"/></td>
+		  		<td><input type="checkbox" name="mercredi19"/></td> 
+		        <td><input type="checkbox" name="mercredi20"/></td> 
+			</tr>
+			<tr>
+		  		<th>Jeudi</th>
+		 		<td><input type="checkbox" name="jeudi17"/></td>
+		 		<td><input type="checkbox" name="jeudi18"/></td>
+		  		<td><input type="checkbox" name="jeudi19"/></td> 
+		        <td><input type="checkbox" name="jeudi20"/></td> 
+			</tr>
+			<tr>
+		  		<th>Vendredi</th>
+		 		<td><input type="checkbox" name="vendredi17"/></td>
+		 		<td><input type="checkbox" name="vendredi18"/></td>
+		  		<td><input type="checkbox" name="vendredi19"/></td> 
+		        <td><input type="checkbox" name="vendredi20"/></td> 
+			</tr>
+			<tr>
+		  		<th>Samedi</th>
+		 		<td><input type="checkbox" name="samedi17"/></td>
+		 		<td><input type="checkbox" name="samedi18"/></td>
+		  		<td><input type="checkbox" name="samedi19"/></td> 
+		        <td><input type="checkbox" name="samedi20"/></td> 
+			</tr>
+		</table>
+		<button type="submit">Valider</button>
+		</form>
+	</div>
+
+</body>
+
+</html>
