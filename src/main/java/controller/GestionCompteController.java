@@ -62,13 +62,15 @@ public class GestionCompteController {
 				.addFlashAttribute("error", "Veuillez vous identifier.");
 			return "redirect:identification";
 		}
-		if (action.equals("modification")) {
-			if (!utilisateurRepository.findByLogin(login).equals(utilisateur)) {
+		if (action.equals("modifier")) {
+			Utilisateur memeLogin = utilisateurRepository.findByLogin(login);
+			if (memeLogin != null && !memeLogin.equals(utilisateur)) {
 				redirectAttributes
-				.addFlashAttribute("error", "Ce login existe déjà.");
+					.addFlashAttribute("error", "Ce login existe déjà.");
 				return "redirect:gestionCompte";			
 			}
-			if (!utilisateurRepository.findByeMail(eMail).equals(utilisateur)) {
+			Utilisateur memeEMail = utilisateurRepository.findByeMail(eMail);
+			if (memeEMail != null && !memeEMail.equals(utilisateur)) {
 				redirectAttributes
 				.addFlashAttribute("error", "Cette addresse mail existe déjà.");
 				return "redirect:nouvelUtilisateur";			
@@ -83,11 +85,12 @@ public class GestionCompteController {
 				utilisateur.setMotDePasse(motDePasse);
 			if (!eMail.equals(""))
 				utilisateur.setEmail(eMail);
+			utilisateurRepository.save(utilisateur);
 			redirectAttributes
 				.addFlashAttribute("success", "Changements enregistrés.");
 			return "redirect:index";
 		}
-		if (action.equals("suppression")) {
+		if (action.equals("supprimer")) {
 			utilisateurRepository.delete(utilisateur);
 			session.setAttribute("Utilisateur", null);
 			redirectAttributes
