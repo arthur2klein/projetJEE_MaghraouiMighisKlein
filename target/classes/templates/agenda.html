@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="./style.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+	    <h1>Tennis Game</h1> 
+    </header>
+    
+    <div class="message">
+    	<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+		<div class="alert alert-error" role="alert" th:text="${error}" th:if="${error}"></div>
+    </div>
+    
+    <div class="nav-bar1">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+
+	<div class="nav-bar2">
+		<a href="./index"><button>Accueil</button></a>  
+		<a  href="./nouvelUtilisateur"><button>Création Compte</button></a> 
+		<a  href="./identification"><button>Identification</button></a>
+		<a  href="./disponibilite"><button>Disponibilité</button></a>
+		<a  href="./resultat"><button>Résultat</button></a>
+		<a  href="./agenda"><button>Agenda</button></a>
+		<a  href="./gestionCompte"><button>Gérer mon compte</button></a>
+	</div>
+	
+	<footer>
+		<p> Copyright &copy; CY-Tech -2022-2023 - All Right Reserved </p> 
+	</footer>
+    
+    <div class="main">
+    	<h1>Votre agenda</h1>
+    	<table>
+    		<thead>
+    		<tr>
+    			<th>Joueur 1</th>
+    			<th>Joueur 2</th>
+    			<th>Terrain</th>
+    			<th>Jour</th>
+    			<th>Heure</th>
+    		</tr>
+    		</thead>
+    		<tbody>
+    		<tr th:each="prev: ${previsions}">
+    			<td th:each="utilis: ${prev.joueursMatch}" th:text="${utilis.toString()}"/>
+    			<td th:text="${prev.terrain.toString()}"/>
+    			<td th:text="${T(fr.cytech.projetJEE.Outils).jourDeSemaine(prev.jour)}"/>
+    			<td th:text="${prev.heure}"/>
+    		</tr>
+    		</tbody>
+    	</table>
+	</div>
+
+</body>
+
+</html>
