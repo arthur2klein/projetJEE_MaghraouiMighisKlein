@@ -1,0 +1,25 @@
+version: "2.2"
+
+services:
+  mariadb:
+    image: mariadb
+    networks:
+        - backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=P@55word
+      - MYSQL_DATABASE=projetJEE2022
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"
+  webpage:
+    build: .
+    networks:
+        - backend
+
+networks:
+    backend:
+        driver: bridge
