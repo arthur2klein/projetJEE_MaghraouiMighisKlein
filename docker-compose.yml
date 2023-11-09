@@ -6,10 +6,9 @@ services:
     networks:
         - backend
     ports:
-      - "3000:3000"
+      - "3307:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=P@55word
       - MYSQL_USER=user
       - MYSQL_PASSWORD=P@55word
       - MYSQL_DATABASE=projetJEE2022
@@ -19,6 +18,8 @@ services:
     build: .
     networks:
         - backend
+    ports:
+        - "8080:8080"
 
 networks:
     backend:
