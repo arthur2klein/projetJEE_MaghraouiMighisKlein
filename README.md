@@ -19,7 +19,7 @@ The dockerfile of this project has been written using the exemple of the [offici
 ### docker-compose.yml
 The docker-compose.yml uses the concepts presented in the module to create a second container for the mariaDB database with the correct login informations, and allow this container and the JEE container to communicate with each other and with the host.
 
-## What I did to verify my work?
+## What I did to verify my work
 
 ### Download the project
 ``` shell
